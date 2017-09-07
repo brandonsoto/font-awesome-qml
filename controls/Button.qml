@@ -46,7 +46,7 @@ Button {
             Rectangle {
                 id: baserect
                 anchors.fill: parent
-                color: backroundColor
+                color: backgroundColor
             }
         }
 
