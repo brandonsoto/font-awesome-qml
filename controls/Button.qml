@@ -33,19 +33,20 @@ import QtQuick.Layouts 1.0
 Button {
     id: button
     property string icon
-    property color color: "black"
+    property color textColor: "black"
+    property color iconColor: "black"
+    property color backgroundColor: "transparent"
     property font font
 
     style: ButtonStyle {
         id: buttonstyle
         property font font: button.font
-        property color foregroundColor: button.color
 
         background: Item {
             Rectangle {
                 id: baserect
                 anchors.fill: parent
-                color: "transparent"
+                color: backroundColor
             }
         }
 
@@ -59,7 +60,7 @@ Button {
                 spacing: 15
 
                 Text {
-                    color: buttonstyle.foregroundColor
+                    color: iconColor
                     font.pointSize: buttonstyle.font.pointSize * 2
                     font.family: awesome.family
                     renderType: Text.NativeRendering
@@ -67,7 +68,7 @@ Button {
                     visible: !(icon === "")
                 }
                 Text {
-                    color: buttonstyle.foregroundColor
+                    color: textColor
                     font: buttonstyle.font
                     renderType: Text.NativeRendering
                     text: control.text
